@@ -9,6 +9,7 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtGui import QFont, QColor, QPalette
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QIcon
 
 # ---------------- Theme ----------------
 THEME_BG = "#85abd4"
@@ -24,6 +25,7 @@ class RetroCommander(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Retro Commander 95 HD v2.2 (Dark Stable)")
+        self.setWindowIcon(QIcon("icon.png"))
         self.resize(1000, 750)
         self.setFont(FONT)
 
