@@ -7,9 +7,8 @@ from PyQt5.QtWidgets import (
     QPushButton, QFileDialog, QListWidget, QMessageBox, QCheckBox,
     QComboBox, QSpinBox, QGroupBox, QTextEdit, QScrollArea, QFormLayout
 )
-from PyQt5.QtGui import QFont, QColor, QPalette
+from PyQt5.QtGui import QFont, QColor, QPalette, QIcon
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QIcon
 
 # ---------------- Theme ----------------
 THEME_BG = "#85abd4"
@@ -20,14 +19,21 @@ THEME_LOG = "#66c0f4"
 FONT = QFont("Segoe UI", 11)
 PROFILES_FILE = "profiles.json"
 
+# ---------------- BASE DIR ----------------
+BASE_DIR = os.path.dirname(os.path.abspath(sys.argv[0]))
+
 # ---------------- Main Class ----------------
 class RetroCommander(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Retro Commander 95 HD v2.2 (Dark Stable)")
-        self.setWindowIcon(QIcon("icon.png"))
         self.resize(1000, 750)
         self.setFont(FONT)
+
+        # Set window & taskbar icon
+        icon_path = os.path.join(BASE_DIR, "icon.png")
+        if os.path.exists(icon_path):
+            self.setWindowIcon(QIcon(icon_path))
 
         # Dark Theme
         palette = QPalette()
@@ -338,6 +344,7 @@ class RetroCommander(QWidget):
             "",
             "[render]",
             f"scaler={profile['scaler']}",
+
             "",
             "[mixer]",
             f"rate=44100",
