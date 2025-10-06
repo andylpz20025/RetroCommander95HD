@@ -54,3 +54,12 @@ Mit RetroCommander 95 HD kannst du:
 
    ```powershell
    pip install PyQt5
+
+
+## Lizenz
+
+Dieses Projekt ist **lizensfrei / Public Domain**.  
+Du darfst es beliebig verwenden, verändern, kopieren oder weitergeben – privat oder kommerziell – ohne Einschränkungen.
+
+
+   
